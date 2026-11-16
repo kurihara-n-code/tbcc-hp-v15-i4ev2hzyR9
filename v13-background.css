@@ -1,0 +1,52 @@
+/* Soft, connected backgrounds for V13 content pages. */
+.c-detail .page-intro,.page-e-learning .elearning-intro{background-color:#f8fafc;background-image:linear-gradient(128deg,transparent 0 43%,rgba(220,231,243,.55) 43% 68%,transparent 68%),linear-gradient(160deg,#fff,#f4f8fc 70%,#fff)}
+.c-detail main>.section.container,.c-detail main>.v7-voices,.c-detail main>.section:not(.container),.c-detail main>.section.course-detail,.c-detail main>.elearning-select,.c-home main>.hp-guide,.c-home main>.v7-voices,.c-home main>.c-guide{position:relative;isolation:isolate}
+.c-detail main>.section.container::before,.c-detail main>.v7-voices::before,.c-detail main>.section:not(.container)::before,.c-detail main>.section.course-detail::before,.c-detail main>.elearning-select::before,.c-home main>.hp-guide::before,.c-home main>.v7-voices::before,.c-home main>.c-guide::before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:0 auto 0 50%;width:100vw;transform:translateX(-50%);background:linear-gradient(155deg,transparent 0 36%,rgba(227,236,246,.48) 36% 65%,transparent 65%),linear-gradient(180deg,#fff,#f7fafe 45%,#fff)}
+.c-detail main>.section:nth-of-type(even)::before,.c-detail main>.v7-voices::before,.c-home main>.v7-voices::before{background:linear-gradient(25deg,transparent 0 38%,rgba(229,237,247,.5) 38% 62%,transparent 62%),linear-gradient(180deg,#fff,#f7f9fc 50%,#fff)}
+.c-detail main>.section.pale{background-color:transparent}
+@media(max-width:750px){.c-detail .page-intro,.page-e-learning .elearning-intro{background-image:linear-gradient(150deg,transparent 0 22%,rgba(227,235,245,.5) 22% 48%,transparent 48%),linear-gradient(170deg,#f7fafc,#fff 70%)}.c-detail main>.section::before,.c-detail main>.v7-voices::before,.c-home main>.hp-guide::before,.c-home main>.v7-voices::before,.c-home main>.c-guide::before{background:linear-gradient(150deg,transparent 0 30%,rgba(230,237,246,.45) 30% 56%,transparent 56%),linear-gradient(180deg,#fff,#f8fafd 50%,#fff)}.c-detail main>.section:nth-of-type(even)::before,.c-detail main>.v7-voices::before,.c-home main>.v7-voices::before{background:linear-gradient(30deg,transparent 0 40%,rgba(230,238,247,.5) 40% 62%,transparent 62%),linear-gradient(180deg,#fff,#f8fafd 50%,#fff)}}
+
+/* Alternate the direction of the diagonal backgrounds. */
+.c-home .v8-message::after{background:linear-gradient(25deg,transparent 0 38%,rgba(229,237,247,.5) 38% 62%,transparent 62%),linear-gradient(180deg,#fff,#f7f9fc 50%,#fff)}
+.c-home main>.hp-guide::before,.c-home main>.c-guide::before{background:linear-gradient(155deg,transparent 0 36%,rgba(227,236,246,.48) 36% 65%,transparent 65%),linear-gradient(180deg,#fff,#f7fafe 45%,#fff)}
+.c-home main>.v7-voices::before{background:linear-gradient(25deg,transparent 0 38%,rgba(229,237,247,.5) 38% 62%,transparent 62%),linear-gradient(180deg,#fff,#f7f9fc 50%,#fff)}
+@media(max-width:750px){.c-home .v8-message::after,.c-home main>.v7-voices::before{background:linear-gradient(30deg,transparent 0 40%,rgba(230,238,247,.5) 40% 62%,transparent 62%),linear-gradient(180deg,#fff,#f8fafd 50%,#fff)}.c-home main>.hp-guide::before,.c-home main>.c-guide::before{background:linear-gradient(150deg,transparent 0 30%,rgba(230,237,246,.45) 30% 56%,transparent 56%),linear-gradient(180deg,#fff,#f8fafd 50%,#fff)}}
+
+/* Restore balanced internal spacing in the contact card. */
+.c-contact .c-contact-copy .c-button{box-sizing:border-box;padding:22px 27px;max-width:100%}@media(max-width:750px){.c-contact .c-contact-copy .c-button{padding:19px 22px;min-width:0;width:100%}}
+
+/* Relative bars within each comparison row; values remain readable. */
+.visual-comparison .compare-value{display:block;font-variant-numeric:tabular-nums;font-weight:700;color:#1e2c5c;font-size:1.08em}.visual-comparison .compare-track{display:block;width:min(150px,90%);height:7px;border-radius:99px;background:#e5ebf2;margin:10px auto 0;overflow:hidden}.visual-comparison .compare-bar{display:block;height:100%;border-radius:inherit;background:#d94135}.visual-comparison tbody tr:last-child td{font-weight:700;color:#1e2c5c}.visual-comparison tbody tr:last-child td::after{content:"共通";display:block;width:max-content;margin:7px auto 0;padding:2px 9px;border-radius:99px;background:#eef2f7;color:#51617c;font-size:11px;font-weight:600}@media(max-width:750px){.visual-comparison .compare-track{width:min(110px,85%);height:6px}.visual-comparison .compare-value{white-space:nowrap}}
+
+/* V14: energetic, clear typography. */
+:root{--font-gothic:"BIZ UDPGothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;--font-mincho:var(--font-gothic)}
+body.campus-version{font-family:var(--font-gothic)}
+body.campus-version h1,body.campus-version h2,body.campus-version h3,body.campus-version h4,body.campus-version .v10-hero h1,body.campus-version .v10-hero h1 span,body.campus-version.c-detail .page-intro h1,body.campus-version.c-detail .section-title h2,body.campus-version.c-detail article h3{font-family:var(--font-gothic);font-weight:900}
+body.campus-version button,body.campus-version input,body.campus-version select,body.campus-version textarea{font-family:inherit}
+
+.visual-comparison td.compare-fee .compare-value{white-space:normal;line-height:1.7;font-size:1em}
+.price-was{margin:18px 0 0;font-size:14px;color:#5b6678}.price-was del{text-decoration-thickness:1px}.price-label{margin:6px 0 -14px;font-size:14px;font-weight:700;color:#1e2c5c}
+.visual-comparison td.compare-fee .nw{white-space:nowrap;display:inline-block}
+
+.c-detail .detail-cover img,.page-e-learning .elearning-intro .detail-cover img{object-position:center top!important}
+.c-detail .detail-cover img[src$="courses-cover.webp"]{object-position:center 19%!important}
+.page-e-learning .elearning-intro .detail-cover img[src$="elearning-home.webp"]{object-position:center 12%!important}
+.c-detail .detail-cover img[src$="learning-cover.webp"]{object-position:center 18%!important}
+.c-detail .detail-cover img[src$="school-cover.webp"]{object-position:center 31%!important}
+
+/* Career steps: stacked cards (number, title, text) instead of a squeezed 3-column grid. */
+.career-steps.v7-milestones{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;overflow:visible;padding:20px 0 30px}
+.career-steps.v7-milestones li{flex:none;display:grid;grid-template-columns:1fr;grid-template-rows:none;align-items:start;align-content:start;gap:8px;padding:26px 28px;width:auto;height:auto}
+.career-steps.v7-milestones li p{grid-column:auto;line-height:1.8}
+
+/* Employers: compact chips instead of large tiles. */
+.employers{padding:22px 26px}
+.employers .v7-employers{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px;padding:0;font-size:13px}
+.employers .v7-employers li{display:block;min-height:0;padding:6px 14px;border-radius:99px;font-size:13px;font-weight:500;line-height:1.5;text-align:center;background:#f1f4f8}
+@media(max-width:750px){.employers{padding:18px}.employers .v7-employers{gap:6px}.employers .v7-employers li{padding:5px 11px;font-size:12px}}
+
+/* Course price lines (same wording as the comparison table). */
+.price-lines{margin:22px 0 0;display:grid;gap:6px;font-size:20px;line-height:1.6;color:#1e2c5c}
+.price-lines .pl{display:block}
+.price-lines b{font-weight:800;white-space:nowrap}
+@media(max-width:750px){.price-lines{font-size:17px}}

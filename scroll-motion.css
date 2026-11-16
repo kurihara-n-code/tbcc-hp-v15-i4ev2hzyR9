@@ -1,0 +1,131 @@
+/* The enhanced reveal replaces the original once-only reveal. */
+.scroll-motion-ready body { overflow-x: clip; }
+.scroll-motion-ready.reveal-ready [data-motion] {
+  --motion-x: 0px;
+  --motion-y: 52px;
+  --motion-scale: 1;
+  opacity: 0;
+  transform: translate3d(var(--motion-x), var(--motion-y), 0) scale(var(--motion-scale));
+  transition: opacity .75s ease, transform 1.05s cubic-bezier(.18,.75,.22,1), clip-path 1.1s cubic-bezier(.18,.75,.22,1);
+  transition-delay: var(--motion-delay, 0ms);
+}
+.scroll-motion-ready [data-motion="left"] { --motion-x: -65px; --motion-y: 16px; }
+.scroll-motion-ready [data-motion="right"] { --motion-x: 65px; --motion-y: 16px; }
+.scroll-motion-ready [data-motion="zoom"] { --motion-y: 60px; --motion-scale: .94; }
+.scroll-motion-ready [data-motion="wipe"] { --motion-y: 22px; clip-path: inset(0 0 18% 0 round 5px); }
+.scroll-motion-ready [data-motion].motion-in,
+.scroll-motion-ready [data-motion]:focus-within { opacity: 1; transform: none; clip-path: none; }
+.scroll-motion-ready [data-motion="wipe"].motion-in,
+.scroll-motion-ready [data-motion="wipe"]:focus-within { clip-path: inset(0 0 0 0); }
+.scroll-motion-ready [data-motion]:focus-within { transition-delay: 0ms; }
+.scroll-motion-ready [data-motion] .c-label::after,
+.scroll-motion-ready .section-title[data-motion] > p::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 2px;
+  margin-top: 14px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .85s cubic-bezier(.18,.75,.22,1) .2s;
+}
+.scroll-motion-ready .c-heading .c-label::after,
+.scroll-motion-ready .section-title[data-motion] > p::after { margin-inline: auto; transform-origin: center; }
+.scroll-motion-ready .motion-in .c-label::after,
+.scroll-motion-ready .section-title.motion-in > p::after { transform: scaleX(1); }
+.motion-scene { overflow: hidden; }
+.scroll-motion-ready .motion-image { translate: 0 var(--photo-y, 0px); scale: 1.16; }
+.scroll-motion-ready .c-course-intro > .motion-image { scale: 1.22; }
+.scroll-motion-ready .c-people-portraits .motion-image { scale: 1.1; }
+.c-reading-progress { position: fixed; inset: 0 0 auto; height: 3px; background: var(--red); z-index: 110; pointer-events: none; transform: scaleX(0); transform-origin: left; }
+@media(max-width:600px) {
+  .scroll-motion-ready.reveal-ready [data-motion] { --motion-y: 30px; transition-duration: .6s, .8s, .8s; transition-delay: 0ms; }
+  .scroll-motion-ready [data-motion="left"] { --motion-x: -28px; }
+  .scroll-motion-ready [data-motion="right"] { --motion-x: 28px; }
+  .scroll-motion-ready [data-motion="zoom"] { --motion-scale: .97; }
+  .scroll-motion-ready .motion-image { scale: 1.1; }
+  .scroll-motion-ready .c-course-intro > .motion-image { scale: 1.14; }
+}
+@media(max-width:360px) {
+  .c-header .c-brand { width: 148px; }
+  .c-header .c-request { padding-inline: 10px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  [data-motion], .reveal-ready [data-reveal] { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+  .motion-image, .c-hero-word { translate: none !important; scale: none !important; }
+  .c-reading-progress { display: none; }
+}
+@media print {
+  [data-motion], .reveal-ready [data-reveal] { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+  .motion-image { translate: none !important; scale: none !important; }
+  .c-reading-progress { display: none; }
+}
+.c-course-photo { display: block; overflow: hidden; }
+.c-course-photo img { transition: transform .55s ease, filter .55s ease; }
+.c-course-photo:hover img, .c-course-photo:focus-visible img { transform: scale(1.04); filter: brightness(.92); }
+.c-course-photo:focus-visible { outline: 3px solid var(--red); outline-offset: -3px; }
+.c-course-card:first-child .c-course-photo img { object-position: center 20%; }
+.c-course-card:nth-child(2) .c-course-photo img,
+.c-course-card:nth-child(3) .c-course-photo img { object-position: center top; transform-origin: center top; }
+.c-people-portraits {
+  position: relative;
+  height: clamp(320px, 27vw, 380px);
+  gap: 18px;
+  overflow: visible;
+  padding: 10px 10px 14px;
+}
+.c-people-portraits::before,
+.c-people-portraits::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.c-people-portraits::before {
+  width: 92px;
+  height: 92px;
+  right: -10px;
+  top: -9px;
+  border: 2px solid #e61f19;
+  border-radius: 50%;
+  opacity: .48;
+}
+.c-people-portraits::after {
+  width: 66%;
+  height: 28px;
+  left: 17%;
+  bottom: 0;
+  background: #f5f5f5;
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: .65;
+}
+.c-people-portraits img {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border: 6px solid #ffffff;
+  box-shadow: 0 18px 34px rgba(23,37,78,.14);
+  background: #ffffff;
+}
+.c-people-portraits img:first-child {
+  border-radius: 72px 12px 46px 12px;
+  margin-top: 12px;
+  height: calc(100% - 12px);
+  rotate: -1.5deg;
+}
+.c-people-portraits img:last-child {
+  border-radius: 12px 72px 12px 46px;
+  rotate: 1.5deg;
+}
+.c-people-grid a:hover .c-people-portraits img:first-child { rotate: -.5deg; }
+.c-people-grid a:hover .c-people-portraits img:last-child { rotate: .5deg; }
+@media(max-width:600px) {
+  .c-people-portraits { height: 300px; gap: 10px; padding-inline: 4px; }
+  .c-people-portraits img { border-width: 4px; }
+  .c-people-portraits img:first-child { border-radius: 46px 8px 32px 8px; }
+  .c-people-portraits img:last-child { border-radius: 8px 46px 8px 32px; }
+}

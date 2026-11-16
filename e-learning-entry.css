@@ -1,0 +1,46 @@
+.c-elearning-nav{border:1px solid #1e2c5c30;border-radius:999px;padding:9px 15px!important;letter-spacing:.04em}
+.c-elearning-nav:hover{border-color:var(--red);background:var(--red);color:#ffffff!important}
+.page-e-learning .elearning-intro{background:linear-gradient(135deg,#f5f5f5 0%,#f5f5f5 100%)}
+.page-e-learning .elearning-intro .detail-cover{height:390px}
+.page-e-learning .elearning-intro .detail-cover img{object-position:center 38%}
+.elearning-select{background:#ffffff}
+.elearning-select .section-title{text-align:center;margin-bottom:52px}
+.elearning-select .section-title h2::after{margin-inline:auto}
+.elearning-course-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.elearning-course-card{position:relative;min-height:390px;padding:42px 34px 30px;overflow:hidden;border:1px solid #f5f5f5;border-radius:8px 70px 8px 8px;background:#ffffff;color:var(--navy);box-shadow:0 18px 45px #1e2c5c0d;transition:transform .35s,box-shadow .35s,border-color .35s}
+.elearning-course-card::before{content:"";position:absolute;inset:0 0 auto;height:7px;background:var(--course-color)}
+.elearning-course-card::after{content:"";position:absolute;right:-65px;top:-70px;width:190px;height:190px;border:1px solid color-mix(in srgb,var(--course-color) 38%,transparent);border-radius:50%;transition:transform .45s}
+.elearning-course-card:hover,.elearning-course-card:focus-visible{transform:translateY(-8px);box-shadow:0 25px 60px #1e2c5c1b;border-color:var(--course-color)}
+.elearning-course-card:hover::after,.elearning-course-card:focus-visible::after{transform:scale(1.13)}
+.elearning-course-card.is-beginner{--course-color:#1e2c5c}
+.elearning-course-card.is-intermediate{--course-color:#e61f19}
+.elearning-course-card.is-advanced{--course-color:#1e2c5c}
+.elearning-course-number{display:block;font:900 72px/1 Arial,sans-serif;letter-spacing:-.07em;color:#f5f5f5;margin-bottom:35px}
+.elearning-course-card>p{margin:0 0 8px;color:var(--course-color);font:800 11px/1.4 Arial,sans-serif;letter-spacing:.18em}
+.elearning-course-card h2{margin:0 0 18px;font-family:var(--font-mincho,"Yu Mincho",serif);font-size:38px;letter-spacing:.05em}
+.elearning-course-copy{display:block;min-height:54px;color:var(--muted);font-size:13px;line-height:1.9}
+.elearning-enter{position:absolute;left:34px;right:30px;bottom:28px;display:flex;align-items:center;justify-content:space-between;padding-top:18px;font-size:13px;font-weight:800}
+.elearning-enter b{display:grid;place-items:center;width:42px;height:42px;border:1px solid currentColor;border-radius:50%;font-size:18px;font-weight:400;transition:background .25s,color .25s,transform .25s}
+.elearning-course-card:hover .elearning-enter b{background:var(--course-color);color:#ffffff;transform:rotate(45deg)}
+.elearning-notice{display:grid;grid-template-columns:160px 1fr;gap:25px;max-width:930px;margin:48px auto 0;padding:24px 28px;background:#f5f5f5}
+.elearning-notice strong{font-size:14px}
+.elearning-notice p{margin:0;color:var(--muted);font-size:12px;line-height:1.9}
+@media(max-width:1100px){.c-desktop .c-elearning-nav{display:none}.elearning-course-card{padding-inline:26px}.elearning-enter{left:26px}}
+@media(max-width:760px){.page-e-learning .elearning-intro .detail-cover{height:250px}.page-e-learning .elearning-intro .detail-cover img{object-position:center 35%}.elearning-select .section-title{margin-bottom:34px}.elearning-course-grid{grid-template-columns:1fr;gap:16px}.elearning-course-card{min-height:300px;border-radius:7px 52px 7px 7px;padding:30px 25px 24px}.elearning-course-number{font-size:54px;margin-bottom:18px}.elearning-course-card h2{font-size:32px}.elearning-course-copy{min-height:40px}.elearning-enter{left:25px;right:24px;bottom:22px}.elearning-notice{grid-template-columns:1fr;gap:8px;margin-top:32px;padding:21px}}
+
+/* Editorial learning cards */
+.elearning-course-card{min-height:330px;padding:36px 36px 88px;border:1px solid #dce2e9;border-radius:16px;background:#f8f9fb;box-shadow:none;overflow:hidden}
+.elearning-course-card::before,.elearning-course-card::after{content:none}
+.elearning-course-number{position:absolute;right:32px;top:26px;margin:0;color:#cdd5df;font:400 42px/1 Georgia,serif;letter-spacing:-.04em}
+.elearning-course-card>p{color:var(--course-color);font-size:11px;letter-spacing:.16em;margin:3px 0 20px}
+.elearning-course-card h2{font-family:'Yu Gothic',Meiryo,sans-serif;font-size:34px;letter-spacing:.04em;margin:0 0 17px}
+.elearning-course-copy{font-size:14px;color:#4a5872;min-height:0}
+.elearning-enter{left:36px;right:36px;bottom:27px;padding:18px 0 0;border-top:1px solid #d5dce6;color:#1e2c5c}
+.elearning-enter b{border:0;border-radius:0;width:auto;height:auto;font:400 24px/1 Arial,sans-serif}
+.elearning-enter b::before{content:'→'}
+.elearning-course-card:hover,.elearning-course-card:focus-visible{transform:translateY(-4px);background:#eef2f7;border-color:#8798b0;box-shadow:0 12px 28px #1e2c5c18}
+.elearning-course-card:hover .elearning-enter b,.elearning-course-card:focus-visible .elearning-enter b{background:transparent;color:var(--course-color);transform:translateX(5px)}
+.elearning-course-card:focus-visible{outline:3px solid #1e2c5c;outline-offset:3px}
+@media(max-width:760px){.elearning-course-card{min-height:265px;padding:28px 24px 78px;border-radius:14px}.elearning-course-number{right:24px;top:23px;font-size:36px}.elearning-course-card h2{font-size:29px}.elearning-enter{left:24px;right:24px;bottom:22px}}
+/* Password entry as a button-style label. */
+.elearning-enter{right:auto;display:inline-flex;align-items:center;justify-content:center;border:1px solid #1e2c5c;border-radius:6px;background:#1e2c5c;color:#fff;padding:11px 22px;min-height:44px;transition:background .2s,color .2s}.elearning-enter b{display:none}.elearning-course-card:hover .elearning-enter,.elearning-course-card:focus-visible .elearning-enter{background:#fff;color:#1e2c5c}
